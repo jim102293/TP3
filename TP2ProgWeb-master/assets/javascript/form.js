@@ -13,6 +13,17 @@ $(document).ready(function () {
       $("#bas").removeClass("activeMenu-3");
       $(".inscriptionSize").addClass("box-4"); //Cette fonction permet de revenir au height normal (de box-4) lorsqu'on click sur l'acceuil
       $(".box-4").removeClass("inscriptionSize");
+      
+  });
+  $("#francais").click(function () { //acceuil
+    $("#accueil").slideDown("fast");
+    $("#inscription").slideUp("fast");
+    $("#sectioncarte").slideUp("fast");
+  });
+  $("#english").click(function () { //acceuil
+    $("#accueil").slideDown("fast");
+    $("#inscription").slideUp("fast");
+    $("#sectioncarte").slideUp("fast");
   });
   $("#milieu").click(function () { //Inscription
     $("#accueil").slideUp("fast");

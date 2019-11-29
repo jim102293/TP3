@@ -9,7 +9,7 @@ if($conn === false){
 } 
 // Escape user inputs for security
 $id = 0;
-$sex = $_GET['sexe'];
+$sex = 0;
 $fullname = $_POST['nom'];
 $date = $_POST['bday'];
 $motivation = $_POST['motivation'];

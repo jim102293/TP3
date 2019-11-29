@@ -23,8 +23,8 @@ include('includes/define-lang.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/CSS/style.css">
     <script src="assets/javascript/script.js"></script>
+    <link rel="stylesheet" href="assets/CSS/style.css">
     <script src="assets/javascript/form.js"></script> 
     <link href="https://fonts.googleapis.com/css?family=Yatra+One&display=swap" rel="stylesheet"> <!--La font de Google-->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -64,16 +64,17 @@ include('includes/define-lang.php');
         </ul>
     </nav>
 <section class="box-4">
-    <a href="includes/switch-lang.php?lang=1">Français</a>
-    <a href="includes/switch-lang.php?lang=2">English</a>
-            <?php
+    <a id="francais" href="includes/switch-lang.php?lang=1">Français</a>
+    <a id="english" href="includes/switch-lang.php?lang=2">English</a>
+    <?php
             //Selecting multiple rows from a MySQL database using the PDO::query function.
-        $sql = "SELECT en, fr FROM `dictionary`";
+        $sql = "SELECT id, en, fr FROM `dictionary` WHERE id=1 ";
         foreach($pdo->query($sql, PDO::FETCH_ASSOC) as $row){
             // echo $row['en'] . '<br>';
             // echo $row['fr'] . '<br>';
         }
             ?>
+    <section id="accueil">
 
             <?php
             if($_SESSION['lang']==1){
@@ -82,6 +83,44 @@ include('includes/define-lang.php');
                 echo $row['en'];
             }
             ?>
+        </section>
+        <section id="inscription">
+        <?php
+            //Selecting multiple rows from a MySQL database using the PDO::query function.
+        $sql = "SELECT id, en, fr FROM `dictionary` WHERE id=2 ";
+        foreach($pdo->query($sql, PDO::FETCH_ASSOC) as $row){
+            // echo $row['en'] . '<br>';
+            // echo $row['fr'] . '<br>';
+        }
+            ?>
+         <?php
+            if($_SESSION['lang']==1){
+                echo $row['fr'];
+            }else if ($_SESSION['lang']==2){
+                echo $row['en'];
+            }
+            ?>
+        </section>
+        <section id="sectioncarte">
+        <?php
+            //Selecting multiple rows from a MySQL database using the PDO::query function.
+        $sql = "SELECT id, en, fr FROM `dictionary` WHERE id=3 ";
+        foreach($pdo->query($sql, PDO::FETCH_ASSOC) as $row){
+            // echo $row['en'] . '<br>';
+            // echo $row['fr'] . '<br>';
+        }
+            ?>
+         <?php
+            if($_SESSION['lang']==1){
+                echo $row['fr'];
+            }else if ($_SESSION['lang']==2){
+                echo $row['en'];
+            }
+            ?>
+        </section>
+    </section>
+</main>
+
         
 </section>
 </body>
