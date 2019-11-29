@@ -1,0 +1,151 @@
+/* Entete */
+header {
+    border: 1px solid black;
+    border-radius:15px;
+    padding:25px;
+    margin-bottom: 20px;
+}
+.container-1 {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.box-1 {
+    flex:7;
+}
+.box-2 {
+    flex:3;
+    font-family: 'Yatra One', cursive;
+    text-align: end;
+}
+/* Logo */
+.logo {
+    height:150px;
+}
+/*Le menu*/
+.container-2 { /*Le bloc FLEX du menu et le contenu*/
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+nav>ul{ 
+    margin-top: 0px;
+    padding: 0px;
+    width: 200px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+nav>ul>li { /* Spécifie uniquement les li du premier ul.*/
+    padding: 8px 16px;
+    border-bottom: 1px solid;
+    transition: 0.5s;
+}
+nav li {
+    list-style-type: none;
+}
+nav>ul>li:nth-child(3) { /*Enlève la bordure au dernier enfant*/
+    border-bottom: none;
+}
+.menu:hover { /*lorsque la souris va sur la liste*/
+    background-color: rgb(14, 75, 6, 0.80);
+    color: white;
+}
+.menu a:hover {
+    cursor: pointer;
+    color:#bba327;
+    font-weight: bold;
+}
+#haut:hover { /*permet que le hover prenne la forme du radius du haut*/
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#bas:hover { /*permet que le hover prenne la forme du radius du bas*/
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+/* Section sous-menu*/
+.sousMenu {
+    display: none;
+    border: none;
+    border-bottom: none;
+}
+nav ul li:hover .sousMenu{
+    display: inline-flex;
+    flex-direction: column;
+    font-weight: normal;
+}
+.sousMenu li {
+    margin-left: -25px;
+    color: initial;
+    font-weight: normal;
+    border-bottom: solid black 1px;
+    padding-top: 5px;
+}
+.sousMenu li:hover {
+    color:white;
+    font-weight: bold;
+}
+/* Contenu principal*/
+.box-4 {
+    margin-left: 5px;
+    padding:10px;
+    width: 100%;
+    border: 1px solid;
+    border-radius: 10px;
+}
+/*  Tableau d'activités */
+table {
+    width:100%;
+    padding-right: 10px;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;  
+}
+td:first-child, td:last-child {
+    text-align:center;
+}
+table th {
+    background-color: #d4d2d5;
+    color:white;
+}
+/* MEDIA QUERIES POUR LE MODE RESPONSIVE */
+/*Affichage mode cellulaire*/
+@media only screen and (max-width: 600px){
+    img.logo {
+        height:100px;
+        align-items:center;
+    }
+    main.container-2 {
+        display: flex;
+        flex-direction: column;
+    }
+    section.box-4 {
+        margin:0;
+        padding-left:0px;
+        width:100% !important;
+        margin-right:30px;
+    }
+    ul.box-3 {
+        display: flex;
+        flex-direction: column;
+        margin:0;
+        padding-left:0px;
+        margin-top:10px;
+        margin-bottom: 10px;
+        width:100% !important;
+        margin-right:30px;
+        text-align: center;
+    }
+    .sousMenu{
+        text-align: start;
+    }
+    .box-2{
+        display:none;
+    }
+    }   
+@media only screen and (min-width: 400px){
+    img.logo {
+        height:125px;
+    }
+}

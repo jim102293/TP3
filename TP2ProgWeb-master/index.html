@@ -1,0 +1,145 @@
+<h2>Our Goal:</h2>
+            <p> Our site offers students wishing to do one or more leisure activities to join the various activities proposed in the following list in 3 steps: </p>
+                <ul>
+                    <li>Subscribe</li>
+                    <li>Choose one or more activity</li>
+                    <li>Start your group activity</li>
+                </ul>   
+            <p>The different activities of groups are the responsibility of professionals. These are passionate about the field that will make you discover new parts of your favorite hobbies. What are you ..? Join us!</p>
+            <div class="box-5">
+                <h2>List of available activities</h2>
+                <div>
+                <input type="button" name="show" value="Fill" onclick="replaceDataInOrder(); showTable()">
+                <input type="button" name="hide" value="Clear" onclick="hideTable()">
+                </div>
+            </div>
+            <table> <!--Le tableau-->
+                <thead>
+                    <tr>
+                        <th onclick="activateTri(1)">#</th>
+                        <th onclick="activateTri(2)">Activity</th>
+                        <th onclick="activateTri(3)">Responsable</th>
+                        <th onclick="activateTri(4)">Amount of subscription</th>
+                    </tr>
+                </thead>
+                <tbody id="tableRows"></tbody>    
+            </table>
+        </section>
+        <section id="inscription">
+            <h2>Subscribe</h2>
+            <form>
+                <label>Name</label>
+                <input type="text" name="nom" onkeyup="lettersOnly(this)"><br>
+        
+                <label>Last Name</label>
+                <input type="text" name="prenom" onkeyup="lettersOnly(this)"><br>
+        
+                <label>Date Of Birth</label>
+                <input type="date" name="bday"><br>
+        
+                <label>Sex</label>
+        
+                <input type="radio" name="sexe" value="Homme">
+                <label>Man</label>
+                <input type="radio" name="sexe" value="Femme">
+                <label>Woman</label><br>
+        
+                <label>Activity</label>
+                <input list="activite" name="activité" value="">
+                <datalist id="activite">
+                    <option value="Swimming">
+                    <option value="Badminton">
+                    <option value="Hiking">
+                    <option value="Kayaking">
+                    <option value="Biking">
+                    <option value="Chess">
+                </datalist><br>
+        
+                <label for="motivation">Motivation</label>
+                <textarea id="motivation" class="reposition" name="motivation" rows="5" cols="40"></textarea><br>
+        
+                <input type="reset" name="reset" value="Reset" onclick="clearStyleOnReset()">
+                <input type="submit" name="submit" value="Validate">
+                <span id="validation"></span>
+            </form>
+        </section>
+        <section id="sectioncarte">
+                <h3>Location of the activity :</h3>
+                <!--La div pour la map -->
+                <div id="map"></div>
+                <p>3351 Boulevard des Forges, Trois-Rivières, QC G8Z 4M3</p>
+        </section>
+    </section>
+</main>
+<h2>Notre but:</h2>
+<p> Notre site propose aux étudiants désireux de réaliser une ou plusieurs activités de loisir de rejoindre les différentes activités proposées dans la liste suivante en 3 étapes: </p>
+    <ul>
+        <li>S'inscire</li>
+        <li>Choisir une ou plusieurs activité</li>
+        <li>Commencer les activités en groupe</li>
+    </ul>   
+<p>Les différentes activités des groupes sont la responsabilité de professionnelles. Il s'agit de passionnés du domaine qui vous feront découvrir des pans inédits de vos loisirs préférés. Qu'attendez-vous..? Rejoignez-nous!</p>
+<div class="box-5">
+    <h2>Liste des activités disponibles</h2>                <div>
+    <input type="button" name="show" value="Remplir" onclick="replaceDataInOrder(); showTable()">
+    <input type="button" name="hide" value="Effacer" onclick="hideTable()">
+    </div>
+</div>
+<table> <!--Le tableau-->
+    <thead>
+        <tr>
+            <th onclick="activateTri(1)">#</th>
+            <th onclick="activateTri(2)">Activité</th>
+            <th onclick="activateTri(3)">Responsable</th>
+            <th onclick="activateTri(4)">Nombre d'inscrits</th>
+        </tr>
+    </thead>
+    <tbody id="tableRows"></tbody>    
+</table>
+</section>
+<section id="inscription">
+<h2>Inscrivez-vous</h2>
+<form>
+    <label>Nom</label>
+    <input type="text" name="nom" onkeyup="lettersOnly(this)"><br>
+
+    <label>Prénom</label>
+    <input type="text" name="prenom" onkeyup="lettersOnly(this)"><br>
+
+    <label>Date de naissance</label>
+    <input type="date" name="bday"><br>
+
+    <label>Sexe</label>
+
+    <input type="radio" name="sexe" value="Homme">
+    <label>Homme</label>
+    <input type="radio" name="sexe" value="Femme">
+    <label>Femme</label><br>
+
+    <label>Activité</label>
+    <input list="activite" name="activité" value="">
+    <datalist id="activite">
+        <option value="Natation">
+        <option value="Badminton">
+        <option value="Randonnée">
+        <option value="Kayak">
+        <option value="Vélo">
+        <option value="Échecs">
+    </datalist><br>
+
+    <label for="motivation">Motivation1234</label>
+    <textarea id="motivation" class="reposition" name="motivation" rows="5" cols="40"></textarea><br>
+
+    <input type="reset" name="reset" value="Réinitialiser" onclick="clearStyleOnReset()">
+    <input type="submit" name="submit" value="Valider">
+    <span id="validation"></span>
+</form>
+</section>
+<section id="sectioncarte">
+    <h3>L'adresse de l'université</h3>
+    <!--La div pour la map -->
+    <div id="map"></div>
+    <p>3351 Boulevard des Forges, Trois-Rivières, QC G8Z 4M3</p>
+</section>
+</section>
+</main>
