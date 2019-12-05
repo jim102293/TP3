@@ -1,4 +1,13 @@
 /* Entete */
+#sectioncarte {
+    display:none;
+}
+#inscription {
+    display:none;
+    border:1px solid black;
+    width:100%;
+    border-radius: 10px;
+}
 header {
     border: 1px solid black;
     border-radius:15px;
@@ -35,7 +44,7 @@ nav>ul{
     border: 1px solid;
     border-radius: 10px;
 }
-nav>ul>li { /* Spécifie uniquement les li du premier ul.*/
+nav>ul>li { /* SpÃ©cifie uniquement les li du premier ul.*/
     padding: 8px 16px;
     border-bottom: 1px solid;
     transition: 0.5s;
@@ -43,7 +52,7 @@ nav>ul>li { /* Spécifie uniquement les li du premier ul.*/
 nav li {
     list-style-type: none;
 }
-nav>ul>li:nth-child(3) { /*Enlève la bordure au dernier enfant*/
+nav>ul>li:nth-child(3) { /*EnlÃ¨ve la bordure au dernier enfant*/
     border-bottom: none;
 }
 .menu:hover { /*lorsque la souris va sur la liste*/
@@ -93,7 +102,7 @@ nav ul li:hover .sousMenu{
     border: 1px solid;
     border-radius: 10px;
 }
-/*  Tableau d'activités */
+/*  Tableau d'activitÃ©s */
 table {
     width:100%;
     padding-right: 10px;

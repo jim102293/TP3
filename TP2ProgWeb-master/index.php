@@ -24,8 +24,8 @@ include('includes/define-lang.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="assets/javascript/script.js"></script>
-    <link rel="stylesheet" href="assets/CSS/style.css">
     <script src="assets/javascript/form.js"></script> 
+    <link rel="stylesheet" href="assets/CSS/style.css">
     <link href="https://fonts.googleapis.com/css?family=Yatra+One&display=swap" rel="stylesheet"> <!--La font de Google-->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Maxime Noel, Frederick Simard, Sebastian Wagner, Jimmy Desfosses, David Mongeau.">
@@ -66,23 +66,22 @@ include('includes/define-lang.php');
 <section class="box-4">
     <a id="francais" href="includes/switch-lang.php?lang=1">Français</a>
     <a id="english" href="includes/switch-lang.php?lang=2">English</a>
-    <?php
+        <section id="accueil">
+        <?php
             //Selecting multiple rows from a MySQL database using the PDO::query function.
         $sql = "SELECT id, en, fr FROM `dictionary` WHERE id=1 ";
         foreach($pdo->query($sql, PDO::FETCH_ASSOC) as $row){
             // echo $row['en'] . '<br>';
             // echo $row['fr'] . '<br>';
-        }
-            ?>
-    <section id="accueil">
-
-            <?php
             if($_SESSION['lang']==1){
                 echo $row['fr'];
             }else if ($_SESSION['lang']==2){
                 echo $row['en'];
             }
-            ?>
+            
+        }
+    ?>
+    
         </section>
         <section id="inscription">
         <?php
@@ -91,14 +90,12 @@ include('includes/define-lang.php');
         foreach($pdo->query($sql, PDO::FETCH_ASSOC) as $row){
             // echo $row['en'] . '<br>';
             // echo $row['fr'] . '<br>';
-        }
-            ?>
-         <?php
             if($_SESSION['lang']==1){
                 echo $row['fr'];
             }else if ($_SESSION['lang']==2){
                 echo $row['en'];
             }
+        }
             ?>
         </section>
         <section id="sectioncarte">
@@ -108,14 +105,12 @@ include('includes/define-lang.php');
         foreach($pdo->query($sql, PDO::FETCH_ASSOC) as $row){
             // echo $row['en'] . '<br>';
             // echo $row['fr'] . '<br>';
-        }
-            ?>
-         <?php
             if($_SESSION['lang']==1){
                 echo $row['fr'];
             }else if ($_SESSION['lang']==2){
                 echo $row['en'];
             }
+        }
             ?>
         </section>
     </section>
