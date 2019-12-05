@@ -1,13 +1,12 @@
 /* Entete */
+
 #sectioncarte {
     display:none;
 }
 #inscription {
     display:none;
-    border:1px solid black;
-    width:100%;
-    border-radius: 10px;
 }
+/* Entete */
 header {
     border: 1px solid black;
     border-radius:15px;
@@ -44,7 +43,7 @@ nav>ul{
     border: 1px solid;
     border-radius: 10px;
 }
-nav>ul>li { /* SpÃ©cifie uniquement les li du premier ul.*/
+nav>ul>li { /* Spécifie uniquement les li du premier ul.*/
     padding: 8px 16px;
     border-bottom: 1px solid;
     transition: 0.5s;
@@ -52,17 +51,31 @@ nav>ul>li { /* SpÃ©cifie uniquement les li du premier ul.*/
 nav li {
     list-style-type: none;
 }
-nav>ul>li:nth-child(3) { /*EnlÃ¨ve la bordure au dernier enfant*/
+nav>ul>li:nth-child(3) { /*Enlève la bordure au dernier enfant*/
     border-bottom: none;
 }
+
 .menu:hover { /*lorsque la souris va sur la liste*/
     background-color: rgb(14, 75, 6, 0.80);
-    color: white;
+    color:#bba327;
 }
 .menu a:hover {
     cursor: pointer;
-    color:#bba327;
+    color: white;
     font-weight: bold;
+}
+li a { /* permet de cliquer n'importe ou sur le li au lieu de cliquer sur le a. */
+    text-decoration: none;
+    margin: 0px;
+    display: inline-block; 
+    width: 100%; 
+    height: 100%;
+}
+a:visited {
+    color:#bba327;
+}
+a:active {
+    font-weight: bolder;
 }
 #haut:hover { /*permet que le hover prenne la forme du radius du haut*/
     border-top-left-radius: 10px;
@@ -96,13 +109,31 @@ nav ul li:hover .sousMenu{
 }
 /* Contenu principal*/
 .box-4 {
-    margin-left: 5px;
-    padding:10px;
-    width: 100%;
-    border: 1px solid;
-    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width:100%; 
+    height: 100%;
+	top:220px; 
+	bottom:0px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border:solid 1px;
 }
-/*  Tableau d'activitÃ©s */
+.box-5 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+input[type=button] {
+    width: 60px;
+    height: 30px;
+    justify-content: right;
+}
+/*  Tableau d'activités */
 table {
     width:100%;
     padding-right: 10px;
@@ -117,9 +148,104 @@ td:first-child, td:last-child {
 table th {
     background-color: #d4d2d5;
     color:white;
+    cursor: pointer;
 }
+
+.activeMenu-1 {
+    background-color: rgb(14, 75, 6, 0.80);
+    color:#bba327;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.activeMenu-2 {
+    background-color: rgb(14, 75, 6, 0.80);
+    color:#bba327;
+    font-weight: bold;
+}
+.activeMenu-3 {
+    background-color: rgb(14, 75, 6, 0.80);
+    color:#bba327;
+    font-weight: bold;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.activeDefault {
+    background-color: rgb(14, 75, 6, 0.80);
+    color:#bba327;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.sousMenuLong {
+    display: inline-flex;
+    flex-direction: column;
+    font-weight: normal;
+}
+.subActive {
+    color:#bba327;
+    font-weight: bold;
+}
+iframe {
+      width: 100%;
+      height: 100%;
+  }
+.inscriptionSize {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width:100%; 
+    height: 350px;
+	top:220px; 
+	bottom:0px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border:solid 1px;
+}
+label { 
+    display: inline-block;
+    width: 150px;
+    margin-bottom: 10px;
+    text-align: left;
+    }
+.invalidLabel {
+    border: solid red 2px;
+    border-radius: 2px;
+}
+span {
+    color: red;
+}
+label:nth-of-type(5) {
+    width: 50px;
+}
+label:nth-of-type(6) {
+    width: 50px;
+}
+textarea{
+    vertical-align: top;
+    margin-bottom: 10px;
+}
+/* Mettre Display par default sur false*/
+#inscription {
+    display:none;
+}
+
+#sectioncarte {
+    display:none;
+}
+
+/* Dimension de la map de Google Map */
+#map {
+    width: 100%;
+    height: 340px;
+    background-color: grey;
+  }
 /* MEDIA QUERIES POUR LE MODE RESPONSIVE */
 /*Affichage mode cellulaire*/
+
+
 @media only screen and (max-width: 600px){
     img.logo {
         height:100px;
@@ -131,7 +257,8 @@ table th {
     }
     section.box-4 {
         margin:0;
-        padding-left:0px;
+        padding:10px;
+        height: 100%;
         width:100% !important;
         margin-right:30px;
     }
@@ -152,9 +279,16 @@ table th {
     .box-2{
         display:none;
     }
+    section.inscriptionSize {
+        margin: 0;
+        margin-right: 30px;
+        height: 370px;
+        padding: 10px;
+    }
     }   
 @media only screen and (min-width: 400px){
     img.logo {
         height:125px;
     }
 }
+

@@ -10,10 +10,7 @@ $(document).ready(function () {
       $("#haut").removeClass("activeDefault");
       $("#haut").addClass("activeMenu-1");
       $("#milieu").removeClass("activeMenu-2");
-      $("#bas").removeClass("activeMenu-3");
-      $(".inscriptionSize").addClass("box-4"); //Cette fonction permet de revenir au height normal (de box-4) lorsqu'on click sur l'acceuil
-      $(".box-4").removeClass("inscriptionSize");
-      
+      $("#bas").removeClass("activeMenu-3");   
   });
   $("#francais").click(function () { //acceuil
     $("#accueil").slideDown("fast");
@@ -35,8 +32,7 @@ $(document).ready(function () {
     $("#milieu").addClass("activeMenu-2");
     $("#haut").removeClass("activeMenu-1");
     $("#bas").removeClass("activeMenu-3");
-    $(".box-4").addClass("inscriptionSize"); //Cette fonction permet d'ajuster le height de la bordure lorsqu'on click sur le menu inscription
-    $(".inscriptionSize").removeClass("box-4");
+    
   });
   $("#bas").click(function () { //Localiser
     $("#accueil").slideUp("fast");
@@ -47,8 +43,6 @@ $(document).ready(function () {
     $("#haut").removeClass("activeDefault");
     $("#haut").removeClass("activeMenu-1");
     $("#milieu").removeClass("activeMenu-2");
-    $(".inscriptionSize").addClass("box-4"); //Cette fonction permet de revenir au height normal (de box-4) lorsqu'on click sur l'acceuil
-    $(".box-4").removeClass("inscriptionSize");
   });
   $("#bas").dblclick(function () { //Enlève le sous-menu au double click
     $(".sousMenu").removeClass("sousMenuLong");

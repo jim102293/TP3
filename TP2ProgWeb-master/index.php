@@ -20,6 +20,7 @@ $pdo->exec( 'SET NAMES utf8' );
 include('includes/define-lang.php');
 ?>
 <!DOCTYPE html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,6 +28,8 @@ include('includes/define-lang.php');
     <script src="assets/javascript/form.js"></script> 
     <link rel="stylesheet" href="assets/CSS/style.css">
     <link href="https://fonts.googleapis.com/css?family=Yatra+One&display=swap" rel="stylesheet"> <!--La font de Google-->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQguqC3LHN9dSSFyNhj3JQpStbMsXNgo4&callback=initMap"></script> <!--Map Google-->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Maxime Noel, Frederick Simard, Sebastian Wagner, Jimmy Desfosses, David Mongeau.">
     
