@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 29, 2019 at 12:00 AM
--- Server version: 5.7.26
--- PHP Version: 7.2.18
+-- Erstellungszeit: 05. Dez 2019 um 17:31
+-- Server-Version: 5.7.26
+-- PHP-Version: 7.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `site`
+-- Datenbank: `site`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `activity`
+-- Tabellenstruktur für Tabelle `activity`
 --
 
 DROP TABLE IF EXISTS `activity`;
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `activity` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `activity`
+-- Daten für Tabelle `activity`
 --
 
 INSERT INTO `activity` (`id`, `activityname`, `description`) VALUES
@@ -51,29 +51,38 @@ INSERT INTO `activity` (`id`, `activityname`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dictionary`
+-- Tabellenstruktur für Tabelle `dictionary`
 --
 
 DROP TABLE IF EXISTS `dictionary`;
 CREATE TABLE IF NOT EXISTS `dictionary` (
-  `id` int(11) NOT NULL,
-  `key` varchar(80) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `keyvalue` varchar(80) NOT NULL,
   `en` text NOT NULL,
   `fr` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `dictionary`
+-- Daten für Tabelle `dictionary`
 --
 
-INSERT INTO `dictionary` (`id`, `key`, `en`, `fr`) VALUES
-(1, '1', '<section id=\"accueil\">\r\n            <h2>Notre but:</h2>\r\n            <p> Notre site propose aux étudiants désireux de réaliser une ou plusieurs activités de loisir de rejoindre les différentes activités proposées dans la liste suivante en 3 étapes: </p>\r\n                <ul>\r\n                    <li>S\'inscire</li>\r\n                    <li>Choisir une ou plusieurs activité</li>\r\n                    <li>Commencer les activités en groupe</li>\r\n                </ul>   \r\n            <p>Les différentes activités des groupes sont la responsabilité de professionnelles. Il s\'agit de passionnés du domaine qui vous feront découvrir des pans inédits de vos loisirs préférés. Qu\'attendez-vous..? Rejoignez-nous!</p>\r\n            <div class=\"box-5\">\r\n                <h2>Liste des activités disponibles</h2>\r\n                <div>\r\n                <input type=\"button\" name=\"show\" value=\"Remplir\" onclick=\"replaceDataInOrder(); showTable()\">\r\n                <input type=\"button\" name=\"hide\" value=\"Effacer\" onclick=\"hideTable()\">\r\n                </div>\r\n            </div>\r\n            <table> <!--Le tableau-->\r\n                <thead>\r\n                    <tr>\r\n                        <th onclick=\"activateTri(1)\">#</th>\r\n                        <th onclick=\"activateTri(2)\">Activité</th>\r\n                        <th onclick=\"activateTri(3)\">Responsable</th>\r\n                        <th onclick=\"activateTri(4)\">Nombre d\'inscrits</th>\r\n                    </tr>\r\n                </thead>\r\n                <tbody id=\"tableRows\"></tbody>    \r\n            </table>\r\n        </section>\r\n        <section id=\"inscription\">\r\n            <h2>Inscrivez-vous</h2>\r\n            <form method=\"post\" action=\"includes/serveur.php\">\r\n                <label>Nom</label>\r\n                <input type=\"text\" name=\"nom\" onkeyup=\"lettersOnly(this)\"><br>\r\n        \r\n                <label>Prénom</label>\r\n                <input type=\"text\" name=\"prenom\" onkeyup=\"lettersOnly(this)\"><br>\r\n        \r\n                <label>Date de naissance</label>\r\n                <input type=\"date\" name=\"bday\"><br>\r\n        \r\n                <label>Sexe</label>\r\n        \r\n                <input type=\"radio\" name=\"sexe\" value=\"Homme\">\r\n                <label>Homme</label>\r\n                <input type=\"radio\" name=\"sexe\" value=\"Femme\">\r\n                <label>Femme</label><br>\r\n        \r\n                <label>Activité</label>\r\n                <input list=\"activite\" name=\"activité\" value=\"\">\r\n                <datalist id=\"activite\">\r\n                    <option value=\"Natation\">\r\n                    <option value=\"Badminton\">\r\n                    <option value=\"Randonnée\">\r\n                    <option value=\"Kayak\">\r\n                    <option value=\"Vélo\">\r\n                    <option value=\"Échecs\">\r\n                </datalist><br>\r\n        \r\n                <label for=\"motivation\">Motivation</label>\r\n                <textarea id=\"motivation\" class=\"reposition\" name=\"motivation\" rows=\"5\" cols=\"40\"></textarea><br>\r\n        \r\n                <input type=\"reset\" name=\"reset\" value=\"Réinitialiser\" onclick=\"clearStyleOnReset()\">\r\n                <input type=\"submit\" name=\"submit\" value=\"Valider\">\r\n                <span id=\"validation\"></span>\r\n            </form>\r\n        </section>\r\n        <section id=\"sectioncarte\">\r\n                <h3>L\'adresse de l\'université</h3>\r\n                <!--La div pour la map -->\r\n                <div id=\"map\"></div>\r\n                <p>3351 Boulevard des Forges, Trois-Rivières, QC G8Z 4M3</p>\r\n        </section>\r\n    </section>\r\n</main>', '<section id=\"accueil\">\r\n            <h2>Notre but:</h2>\r\n            <p> Notre site propose aux étudiants désireux de réaliser une ou plusieurs activités de loisir de rejoindre les différentes activités proposées dans la liste suivante en 3 étapes: </p>\r\n                <ul>\r\n                    <li>S\'inscire</li>\r\n                    <li>Choisir une ou plusieurs activité</li>\r\n                    <li>Commencer les activités en groupe</li>\r\n                </ul>   \r\n            <p>Les différentes activités des groupes sont la responsabilité de professionnelles. Il s\'agit de passionnés du domaine qui vous feront découvrir des pans inédits de vos loisirs préférés. Qu\'attendez-vous..? Rejoignez-nous!</p>\r\n            <div class=\"box-5\">\r\n                <h2>Liste des activités disponibles</h2>\r\n                <div>\r\n                <input type=\"button\" name=\"show\" value=\"Remplir\" onclick=\"replaceDataInOrder(); showTable()\">\r\n                <input type=\"button\" name=\"hide\" value=\"Effacer\" onclick=\"hideTable()\">\r\n                </div>\r\n            </div>\r\n            <table> <!--Le tableau-->\r\n                <thead>\r\n                    <tr>\r\n                        <th onclick=\"activateTri(1)\">#</th>\r\n                        <th onclick=\"activateTri(2)\">Activité</th>\r\n                        <th onclick=\"activateTri(3)\">Responsable</th>\r\n                        <th onclick=\"activateTri(4)\">Nombre d\'inscrits</th>\r\n                    </tr>\r\n                </thead>\r\n                <tbody id=\"tableRows\"></tbody>    \r\n            </table>\r\n        </section>\r\n        <section id=\"inscription\">\r\n            <h2>Inscrivez-vous</h2>\r\n            <form method=\"post\" action=\"includes/serveur.php\">\r\n                <label>Nom</label>\r\n                <input type=\"text\" name=\"nom\" onkeyup=\"lettersOnly(this)\"><br>\r\n        \r\n                <label>Prénom</label>\r\n                <input type=\"text\" name=\"prenom\" onkeyup=\"lettersOnly(this)\"><br>\r\n        \r\n                <label>Date de naissance</label>\r\n                <input type=\"date\" name=\"bday\"><br>\r\n        \r\n                <label>Sexe</label>\r\n        \r\n                <input type=\"radio\" name=\"sexe\" value=\"Homme\">\r\n                <label>Homme</label>\r\n                <input type=\"radio\" name=\"sexe\" value=\"Femme\">\r\n                <label>Femme</label><br>\r\n        \r\n                <label>Activité</label>\r\n                <input list=\"activite\" name=\"activité\" value=\"\">\r\n                <datalist id=\"activite\">\r\n                    <option value=\"Natation\">\r\n                    <option value=\"Badminton\">\r\n                    <option value=\"Randonnée\">\r\n                    <option value=\"Kayak\">\r\n                    <option value=\"Vélo\">\r\n                    <option value=\"Échecs\">\r\n                </datalist><br>\r\n        \r\n                <label for=\"motivation\">Motivation</label>\r\n                <textarea id=\"motivation\" class=\"reposition\" name=\"motivation\" rows=\"5\" cols=\"40\"></textarea><br>\r\n        \r\n                <input type=\"reset\" name=\"reset\" value=\"Réinitialiser\" onclick=\"clearStyleOnReset()\">\r\n                <input type=\"submit\" name=\"submit\" value=\"Valider\">\r\n                <span id=\"validation\"></span>\r\n            </form>\r\n        </section>\r\n        <section id=\"sectioncarte\">\r\n                <h3>L\'adresse de l\'université</h3>\r\n                <!--La div pour la map -->\r\n                <div id=\"map\"></div>\r\n                <p>3351 Boulevard des Forges, Trois-Rivières, QC G8Z 4M3</p>\r\n        </section>\r\n    </section>\r\n</main>');
+INSERT INTO `dictionary` (`id`, `keyvalue`, `en`, `fr`) VALUES
+(1, 'home', 'Home', 'Accueil'),
+(2, 'subscribe', 'Subscribe', 'S\'inscrire'),
+(3, 'localise', 'Find an activity', 'Localiser une activité'),
+(4, 'natation', 'Swimming', 'Natation'),
+(5, 'badminton', 'Badminton', 'Badminton'),
+(6, 'randonee', 'Hiking', 'Randonnée'),
+(7, 'kayak', 'Kayaking', 'Kayak'),
+(8, 'velo', 'Biking', 'Vélo'),
+(9, 'echec', 'Chess', 'Échecs'),
+(10, 'student', 'I am a student', 'Je suis un étudiant');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `member`
+-- Tabellenstruktur für Tabelle `member`
 --
 
 DROP TABLE IF EXISTS `member`;
@@ -85,10 +94,10 @@ CREATE TABLE IF NOT EXISTS `member` (
   `activityid` int(11) NOT NULL,
   `motivation` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `member`
+-- Daten für Tabelle `member`
 --
 
 INSERT INTO `member` (`id`, `fullname`, `dob`, `sex`, `activityid`, `motivation`) VALUES
@@ -96,12 +105,28 @@ INSERT INTO `member` (`id`, `fullname`, `dob`, `sex`, `activityid`, `motivation`
 (2, 'Jimmy', '1211-02-12', 0, 0, 'Im a happy student'),
 (3, 'Jimmy', '1211-02-12', 0, 0, 'Im a happy student'),
 (4, 'Tommy', '0111-11-12', 0, 0, ''),
-(5, 'Tommy', '0111-11-12', 0, 0, '');
+(5, 'Tommy', '0111-11-12', 0, 0, ''),
+(6, 'Wagner', '2019-12-05', 0, 0, 'test'),
+(7, 'Wagner', '2019-12-05', 0, 0, 'test'),
+(8, 'Wagner', '2019-12-05', 0, 0, 'test'),
+(9, 'Wagner', '2019-12-05', 0, 0, 'test'),
+(10, 'Wagner', '2004-12-02', 0, 0, 'Hallo'),
+(11, 'Wagner', '2004-12-02', 0, 0, 'Hallo'),
+(12, 'Wagner', '2019-08-05', 0, 0, ''),
+(13, 'Wagner', '2019-08-05', 0, 0, ''),
+(14, 'Wagner', '2016-12-05', 0, 0, ''),
+(15, 'Wagner', '2016-12-05', 0, 0, ''),
+(16, 'WagnerSebastian', '2019-12-05', 0, 0, ''),
+(17, 'WagnerSebastian', '2019-12-05', 0, 0, ''),
+(18, 'Wagner Sebastian', '2019-12-05', 0, 1, ''),
+(19, 'Wagner Sebastian', '2019-12-05', 0, 1, ''),
+(20, 'Wagner Sebastian', '2019-12-05', 0, 1, ''),
+(21, 'Wagner Sebastian', '2019-12-05', 0, 1, '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `supervisor`
+-- Tabellenstruktur für Tabelle `supervisor`
 --
 
 DROP TABLE IF EXISTS `supervisor`;
