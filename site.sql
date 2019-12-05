@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Erstellungszeit: 05. Dez 2019 um 21:10
+-- Erstellungszeit: 05. Dez 2019 um 22:57
 -- Server-Version: 5.7.26
 -- PHP-Version: 7.2.18
 
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `dictionary` (
   `en` text NOT NULL,
   `fr` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 
 --
 -- Daten für Tabelle `dictionary`
@@ -81,6 +81,7 @@ INSERT INTO `dictionary` (`id`, `keyvalue`, `en`, `fr`) VALUES
 (11, 'activite', 'Activity', 'Activité'),
 (12, 'responsable', 'Responsible', 'Responsable'),
 (13, 'nombreDinscrits', 'Number of subscribers\r\n', 'Nombre d\'inscrits'),
+(24, 'accueiltitre', 'Our Goal', 'Notre but'),
 (15, 'nom', 'Last Name', 'Nom'),
 (16, 'prenom', 'First Name', 'prénom'),
 (17, 'dob', 'Date of birth', 'Date de naissance'),
@@ -89,7 +90,13 @@ INSERT INTO `dictionary` (`id`, `keyvalue`, `en`, `fr`) VALUES
 (20, 'femme', 'Female', 'Femme'),
 (21, 'motivation', 'Motivation', 'Motivation'),
 (22, 'reinitialiser', 'Reset', 'Réinitialiser'),
-(23, 'valider', 'Send', 'Valider');
+(23, 'valider', 'Send', 'Valider'),
+(25, 'inscriptiontitre', 'Enrollment for activities', 'Inscrivez-vous'),
+(26, 'accueiltitretable', 'List of available activities', 'Liste des activités disponibles '),
+(27, 'titresectioncarte', 'Adress of the university', 'L\'adresse de l\'université '),
+(28, 'title', 'Activities for students!', 'Loisir pour les étudiants!'),
+(29, 'buttonremplir', 'Fill', 'Remplir'),
+(30, 'buttoneffacer', 'Delete', 'Effacer');
 
 -- --------------------------------------------------------
 

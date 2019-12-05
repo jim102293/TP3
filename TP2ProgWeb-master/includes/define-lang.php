@@ -100,6 +100,30 @@ foreach($pdo->query($sql, PDO::FETCH_ASSOC) as $row){
     else if ($row['keyvalue'] == 'valider'){
         $valider= $row[$language];
     }
+    // Les titres
+    else if ($row['keyvalue'] == 'accueiltitre'){
+        $accueiltitre= $row[$language];
+    }
+    else if ($row['keyvalue'] == 'accueiltitretable'){
+        $accueiltitretable = $row[$language];
+    }
+    else if ($row['keyvalue'] == 'inscriptiontitre'){
+        $inscriptiontitre = $row[$language];
+    }
+    else if ($row['keyvalue'] == 'titresectioncarte'){
+        $titresectioncarte= $row[$language];
+    }
+    else if ($row['keyvalue'] == 'title'){
+        $title = $row[$language];
+    }
+    else if ($row['keyvalue'] == 'buttonremplir'){
+        $buttonremplir = $row[$language];
+    }
+    else if ($row['keyvalue'] == 'buttoneffacer'){
+        $buttoneffacer= $row[$language];
+    }
+
+
 // 
 }      
 ?>

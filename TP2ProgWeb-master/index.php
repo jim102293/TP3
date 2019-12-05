@@ -33,7 +33,7 @@ include('includes/define-lang.php');
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Maxime Noel, Frederick Simard, Sebastian Wagner, Jimmy Desfosses, David Mongeau.">
     
-    <title>Loisir pour les étudiants</title>
+    <title><?php echo $title; ?></title>
     
 </head>
 <body onload="showTable()">
@@ -43,7 +43,7 @@ include('includes/define-lang.php');
                     <img class="logo" src="assets/images/logo1.png" alt="LOGO_entete">
                 </div><!-- Fin de la box-1 -->
                 <div class="box-2">
-                    <h1 class="loisir">Loisir pour les étudiants !</h1>
+                    <h1 class="loisir"> <?php echo $title; ?></h1>
                 </div><!-- Fin de la box-2 -->
         </section><!-- Fin de la section ENTÊTE -->
 </header>
@@ -70,7 +70,7 @@ include('includes/define-lang.php');
     <a id="francais" href="includes/switch-lang.php?lang=1">Français</a>
     <a id="english" href="includes/switch-lang.php?lang=2">English</a>
     <section id="accueil">
-            <h2>Notre but:</h2>
+            <h2><?php echo $accueiltitre; ?></h2>
             <p> Notre site propose aux étudiants désireux de réaliser une ou plusieurs activités de loisir de rejoindre les différentes activités proposées dans la liste suivante en 3 étapes: </p>
                 <ul>
                     <li>S'inscire</li>
@@ -79,10 +79,10 @@ include('includes/define-lang.php');
                 </ul>   
             <p>Les différentes activités des groupes sont la responsabilité de professionnelles. Il s'agit de passionnés du domaine qui vous feront découvrir des pans inédits de vos loisirs préférés. Qu'attendez-vous..? Rejoignez-nous!</p>
             <div class="box-5">
-                <h2>Liste des activités disponibles</h2>
+                <h2><?php echo $accueiltitretable; ?></h2>
                 <div>
-                <input type="button" name="show" value="Remplir" onclick="replaceDataInOrder(); showTable()">
-                <input type="button" name="hide" value="Effacer" onclick="hideTable()">
+                <input type="button" name="show" value=<?php echo $buttonremplir; ?> onclick="replaceDataInOrder(); showTable()">
+                <input type="button" name="hide" value=<?php echo $buttoneffacer; ?> onclick="hideTable()">
                 </div>
             </div>
             <table> <!--Le tableau-->
@@ -98,7 +98,7 @@ include('includes/define-lang.php');
             </table>
         </section>
         <section id="inscription">
-            <h2>Inscrivez-vous</h2>
+            <h2><?php echo $inscriptiontitre; ?></h2>
             <form method="post" action="includes/serveur.php">
                 <label><?php echo $nom; ?></label>
                 <input type="text" name="nom" onkeyup="lettersOnly(this)"><br>
@@ -136,7 +136,7 @@ include('includes/define-lang.php');
             </form>
         </section>
         <section id="sectioncarte">
-                <h3>L'adresse de l'université</h3>
+                <h3><?php echo $titresectioncarte; ?></h3>
                 <!--La div pour la map -->
                 <div id="map"></div>
                 <p>3351 Boulevard des Forges, Trois-Rivières, QC G8Z 4M3</p>
