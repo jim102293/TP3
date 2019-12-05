@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Erstellungszeit: 05. Dez 2019 um 17:31
+-- Erstellungszeit: 05. Dez 2019 um 20:49
 -- Server-Version: 5.7.26
 -- PHP-Version: 7.2.18
 
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `dictionary` (
   `en` text NOT NULL,
   `fr` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
 --
 -- Daten für Tabelle `dictionary`
@@ -73,11 +73,23 @@ INSERT INTO `dictionary` (`id`, `keyvalue`, `en`, `fr`) VALUES
 (3, 'localise', 'Find an activity', 'Localiser une activité'),
 (4, 'natation', 'Swimming', 'Natation'),
 (5, 'badminton', 'Badminton', 'Badminton'),
-(6, 'randonee', 'Hiking', 'Randonnée'),
+(6, 'randonnee', 'Hiking', 'Randonnée'),
 (7, 'kayak', 'Kayaking', 'Kayak'),
 (8, 'velo', 'Biking', 'Vélo'),
 (9, 'echec', 'Chess', 'Échecs'),
-(10, 'student', 'I am a student', 'Je suis un étudiant');
+(10, 'student', 'I am a student', 'Je suis un étudiant'),
+(11, 'activite', 'Activity', 'Activité'),
+(12, 'responsable', 'Responsible', 'Responsable'),
+(13, 'nombreDinscrits', 'Number of subscribers\r\n', 'Nombre d\'inscrits'),
+(15, 'nom', 'Last Name', 'Nom'),
+(16, 'prenom', 'First Name', 'prénom'),
+(17, 'dob', 'Date of birth', 'Date de naissance'),
+(18, 'sexe', 'Gender', 'Sexe'),
+(19, 'homme', 'Male', 'Homme'),
+(20, 'femme', 'Female', 'Femme'),
+(21, 'motivation', 'Motivation', 'Motivation'),
+(22, 'reinitialiser', 'Reset', 'Réinitialiser'),
+(23, 'valider', 'Send', 'Valider');
 
 -- --------------------------------------------------------
 
@@ -94,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `member` (
   `activityid` int(11) NOT NULL,
   `motivation` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
 
 --
 -- Daten für Tabelle `member`
@@ -114,14 +126,11 @@ INSERT INTO `member` (`id`, `fullname`, `dob`, `sex`, `activityid`, `motivation`
 (11, 'Wagner', '2004-12-02', 0, 0, 'Hallo'),
 (12, 'Wagner', '2019-08-05', 0, 0, ''),
 (13, 'Wagner', '2019-08-05', 0, 0, ''),
-(14, 'Wagner', '2016-12-05', 0, 0, ''),
-(15, 'Wagner', '2016-12-05', 0, 0, ''),
-(16, 'WagnerSebastian', '2019-12-05', 0, 0, ''),
-(17, 'WagnerSebastian', '2019-12-05', 0, 0, ''),
-(18, 'Wagner Sebastian', '2019-12-05', 0, 1, ''),
-(19, 'Wagner Sebastian', '2019-12-05', 0, 1, ''),
-(20, 'Wagner Sebastian', '2019-12-05', 0, 1, ''),
-(21, 'Wagner Sebastian', '2019-12-05', 0, 1, '');
+(26, 'Teste Tesre', '2019-12-06', 0, 4, ''),
+(25, 'Wagner Sebastian', '2019-12-05', 0, 4, 'test'),
+(24, 'Wagner Sebastian', '2019-12-05', 0, 3, ''),
+(23, 'Wagner Sebastian', '2019-12-05', 0, 3, ''),
+(22, 'Wagner Sebastian', '2019-12-05', 0, 1, '');
 
 -- --------------------------------------------------------
 
