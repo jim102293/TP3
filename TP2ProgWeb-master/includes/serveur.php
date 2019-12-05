@@ -21,7 +21,7 @@ $fullname = $_POST['nom'].' '.$_POST['prenom'];
 $date = $_POST['bday'];
 $motivation = $_POST['motivation'];
 // Transferer activité à une id
-if ($_POST['activité'] == 1){
+if ($_POST['activité'] == 'Natation'){
     $activityid = 1;
 }
 else if ($_POST['activité'] == 'Badminton'){
@@ -58,6 +58,6 @@ if (mysqli_query($conn, $sql)) {
 // Close connection
 $conn -> close();
 
-//header("location: $goback");
+header("location: $goback");
 
 ?>

@@ -17,7 +17,9 @@ $kayak = 'Kayak';
 $velo = 'Vélo';
 $echec = 'Échecs';
 $student = 'Je suis un étudiant';
-
+$activite = 'Activité';
+$responsable = 'Responsable';
+$nombreDinscrits = 'Nombre d\'inscrits';
 // Choisir la langue dependant de la session
 if($_SESSION['lang'] == 1){
     $language = 'fr';
@@ -29,6 +31,7 @@ if($_SESSION['lang'] == 1){
 $sql = "SELECT keyvalue, en, fr FROM `dictionary`";
 foreach($pdo->query($sql, PDO::FETCH_ASSOC) as $row){
 // Mettre l'entrée des base des données et les tags ensemble
+// Les activitées et le menu
     if ($row['keyvalue'] == 'home'){
     $home = $row[$language];
     }     
@@ -59,5 +62,44 @@ foreach($pdo->query($sql, PDO::FETCH_ASSOC) as $row){
     else if ($row['keyvalue'] == 'student'){
         $student = $row[$language];
     }
+    // La tête du tableau
+    else if ($row['keyvalue'] == 'activite'){
+        $activite = $row[$language];
+    }
+    else if ($row['keyvalue'] == 'responsable'){
+        $responsable = $row[$language];
+    }
+    else if ($row['keyvalue'] == 'nombreDinscrits'){
+        $nombreDinscrits= $row[$language];
+    }
+    // Le formulaire
+    else if ($row['keyvalue'] == 'nom'){
+        $nom = $row[$language];
+    }
+    else if ($row['keyvalue'] == 'prenom'){
+        $prenom = $row[$language];
+    }
+    else if ($row['keyvalue'] == 'dob'){
+        $dob= $row[$language];
+    }
+    else if ($row['keyvalue'] == 'sexe'){
+        $sexe = $row[$language];
+    }
+    else if ($row['keyvalue'] == 'homme'){
+        $homme = $row[$language];
+    }
+    else if ($row['keyvalue'] == 'femme'){
+        $femme= $row[$language];
+    }
+    else if ($row['keyvalue'] == 'motivation'){
+        $motivation = $row[$language];
+    }
+    else if ($row['keyvalue'] == 'reinitialiser'){
+        $reinitialiser = $row[$language];
+    }
+    else if ($row['keyvalue'] == 'valider'){
+        $valider= $row[$language];
+    }
+// 
 }      
 ?>

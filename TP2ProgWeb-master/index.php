@@ -86,9 +86,9 @@ include('includes/define-lang.php');
                 <thead>
                     <tr>
                         <th onclick="activateTri(1)">#</th>
-                        <th onclick="activateTri(2)">Activité</th>
-                        <th onclick="activateTri(3)">Responsable</th>
-                        <th onclick="activateTri(4)">Nombre d'inscrits</th>
+                        <th onclick="activateTri(2)"><?php echo $activite; ?></th>
+                        <th onclick="activateTri(3)"><?php echo $responsable; ?></th>
+                        <th onclick="activateTri(4)"><?php echo $nombreDinscrits; ?></th>
                     </tr>
                 </thead>
                 <tbody id="tableRows"></tbody>    
@@ -97,38 +97,38 @@ include('includes/define-lang.php');
         <section id="inscription">
             <h2>Inscrivez-vous</h2>
             <form method="post" action="includes/serveur.php">
-                <label>Nom</label>
+                <label><?php echo $nom; ?></label>
                 <input type="text" name="nom" onkeyup="lettersOnly(this)"><br>
         
-                <label>Prénom</label>
+                <label><?php echo $prenom; ?></label>
                 <input type="text" name="prenom" onkeyup="lettersOnly(this)"><br>
         
-                <label>Date de naissance</label>
+                <label><?php echo $dob; ?></label>
                 <input type="date" name="bday"><br>
         
-                <label>Sexe</label>
+                <label><?php echo $sexe; ?></label>
         
                 <input type="radio" name="sexe" value="Homme">
-                <label>Homme</label>
+                <label><?php echo $homme; ?></label>
                 <input type="radio" name="sexe" value="Femme">
-                <label>Femme</label><br>
+                <label><?php echo $femme; ?></label><br>
         
-                <label>Activité</label>
+                <label><?php echo $activite; ?></label>
                 <input list="activite" name="activité" value="">
                 <datalist id="activite">
-                    <option value="Natation">
-                    <option value="Badminton">
-                    <option value="Randonnée">
-                    <option value="Kayak">
-                    <option value="Vélo">
-                    <option value="Échecs">
+                    <option value="Natation"><?php echo $natation; ?></option>
+                    <option value="Badminton"><?php echo $badminton; ?></option>
+                    <option value="Randonnée"> <?php echo $randonnee; ?></option>
+                    <option value="Kayak"><?php echo $kayak; ?></option>
+                    <option value="Vélo"><?php echo $velo; ?></option>
+                    <option value="Échecs"><?php echo $echec; ?></option>
                 </datalist><br>
         
-                <label for="motivation">Motivation</label>
+                <label for="motivation"><?php echo $motivation; ?></label>
                 <textarea id="motivation" class="reposition" name="motivation" rows="5" cols="40"></textarea><br>
         
-                <input type="reset" name="reset" value="Réinitialiser" onclick="clearStyleOnReset()">
-                <input type="submit" name="submit" value="Valider">
+                <input type="reset" name="reset" value=<?php echo $reinitialiser; ?> onclick="clearStyleOnReset()">
+                <input type="submit" name="submit" value=<?php echo $valider; ?>>
                 <span id="validation"></span>
             </form>
         </section>
