@@ -66,52 +66,77 @@ include('includes/define-lang.php');
 <section class="box-4">
     <a id="francais" href="includes/switch-lang.php?lang=1">Français</a>
     <a id="english" href="includes/switch-lang.php?lang=2">English</a>
-        <section id="accueil">
-        <?php
-            //Selecting multiple rows from a MySQL database using the PDO::query function.
-        $sql = "SELECT id, en, fr FROM `dictionary` WHERE id=1 ";
-        foreach($pdo->query($sql, PDO::FETCH_ASSOC) as $row){
-            // echo $row['en'] . '<br>';
-            // echo $row['fr'] . '<br>';
-            if($_SESSION['lang']==1){
-                echo $row['fr'];
-            }else if ($_SESSION['lang']==2){
-                echo $row['en'];
-            }
-            
-        }
-    ?>
-    
+    <section id="accueil">
+            <h2>Notre but:</h2>
+            <p> Notre site propose aux étudiants désireux de réaliser une ou plusieurs activités de loisir de rejoindre les différentes activités proposées dans la liste suivante en 3 étapes: </p>
+                <ul>
+                    <li>S'inscire</li>
+                    <li>Choisir une ou plusieurs activité</li>
+                    <li>Commencer les activités en groupe</li>
+                </ul>   
+            <p>Les différentes activités des groupes sont la responsabilité de professionnelles. Il s'agit de passionnés du domaine qui vous feront découvrir des pans inédits de vos loisirs préférés. Qu'attendez-vous..? Rejoignez-nous!</p>
+            <div class="box-5">
+                <h2>Liste des activités disponibles</h2>
+                <div>
+                <input type="button" name="show" value="Remplir" onclick="replaceDataInOrder(); showTable()">
+                <input type="button" name="hide" value="Effacer" onclick="hideTable()">
+                </div>
+            </div>
+            <table> <!--Le tableau-->
+                <thead>
+                    <tr>
+                        <th onclick="activateTri(1)">#</th>
+                        <th onclick="activateTri(2)">Activité</th>
+                        <th onclick="activateTri(3)">Responsable</th>
+                        <th onclick="activateTri(4)">Nombre d'inscrits</th>
+                    </tr>
+                </thead>
+                <tbody id="tableRows"></tbody>    
+            </table>
         </section>
         <section id="inscription">
-        <?php
-            //Selecting multiple rows from a MySQL database using the PDO::query function.
-        $sql = "SELECT id, en, fr FROM `dictionary` WHERE id=2 ";
-        foreach($pdo->query($sql, PDO::FETCH_ASSOC) as $row){
-            // echo $row['en'] . '<br>';
-            // echo $row['fr'] . '<br>';
-            if($_SESSION['lang']==1){
-                echo $row['fr'];
-            }else if ($_SESSION['lang']==2){
-                echo $row['en'];
-            }
-        }
-            ?>
+            <h2>Inscrivez-vous</h2>
+            <form method="post" action="includes/serveur.php">
+                <label>Nom</label>
+                <input type="text" name="nom" onkeyup="lettersOnly(this)"><br>
+        
+                <label>Prénom</label>
+                <input type="text" name="prenom" onkeyup="lettersOnly(this)"><br>
+        
+                <label>Date de naissance</label>
+                <input type="date" name="bday"><br>
+        
+                <label>Sexe</label>
+        
+                <input type="radio" name="sexe" value="Homme">
+                <label>Homme</label>
+                <input type="radio" name="sexe" value="Femme">
+                <label>Femme</label><br>
+        
+                <label>Activité</label>
+                <input list="activite" name="activité" value="">
+                <datalist id="activite">
+                    <option value="Natation">
+                    <option value="Badminton">
+                    <option value="Randonnée">
+                    <option value="Kayak">
+                    <option value="Vélo">
+                    <option value="Échecs">
+                </datalist><br>
+        
+                <label for="motivation">Motivation</label>
+                <textarea id="motivation" class="reposition" name="motivation" rows="5" cols="40"></textarea><br>
+        
+                <input type="reset" name="reset" value="Réinitialiser" onclick="clearStyleOnReset()">
+                <input type="submit" name="submit" value="Valider">
+                <span id="validation"></span>
+            </form>
         </section>
         <section id="sectioncarte">
-        <?php
-            //Selecting multiple rows from a MySQL database using the PDO::query function.
-        $sql = "SELECT id, en, fr FROM `dictionary` WHERE id=3 ";
-        foreach($pdo->query($sql, PDO::FETCH_ASSOC) as $row){
-            // echo $row['en'] . '<br>';
-            // echo $row['fr'] . '<br>';
-            if($_SESSION['lang']==1){
-                echo $row['fr'];
-            }else if ($_SESSION['lang']==2){
-                echo $row['en'];
-            }
-        }
-            ?>
+                <h3>L'adresse de l'université</h3>
+                <!--La div pour la map -->
+                <div id="map"></div>
+                <p>3351 Boulevard des Forges, Trois-Rivières, QC G8Z 4M3</p>
         </section>
     </section>
 </main>
