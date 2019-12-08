@@ -3,7 +3,7 @@
 $user = 'root';
  
 //Your MySQL password.
-$password = '';
+$password = 'root';
  
 //The server / hostname of your MySQL installation.
 $server = 'localhost';
@@ -69,7 +69,7 @@ include('includes/define-lang.php');
 <section class="box-4">
     <a id="francais" href="includes/switch-lang.php?lang=1">Français</a>
     <a id="english" href="includes/switch-lang.php?lang=2">English</a>
-    <section id="accueil">
+    <input id="accueil">
             <h2><?php echo $accueiltitre; ?></h2>
             <p> Notre site propose aux étudiants désireux de réaliser une ou plusieurs activités de loisir de rejoindre les différentes activités proposées dans la liste suivante en 3 étapes: </p>
                 <ul>
@@ -85,7 +85,19 @@ include('includes/define-lang.php');
                 <input type="button" name="hide" value=<?php echo $buttoneffacer; ?> onclick="hideTable()">
                 </div>
             </div>
-            <table> <!--Le tableau-->
+        <input id="texterecherche" type="search" placeholder="🔍" onkeyup="LoadTable(1,$('#texterecherche').val())"></input>
+        <table id="matable">
+                <thead>
+                    <tr>
+                        <th onclick="LoadTable(1,$('#texterecherche').val())">#</th>
+                        <th onclick="LoadTable(2,$('#texterecherche').val())"><?php echo $activite; ?></th>
+                        <th onclick="LoadTable(3,$('#texterecherche').val())"><?php echo $responsable; ?></th>
+                        <th onclick="LoadTable(4,$('#texterecherche').val())"><?php echo $nombreDinscrits; ?></th>
+                    </tr>
+                </thead>
+        </table>
+        <!--
+        <table>
                 <thead>
                     <tr>
                         <th onclick="activateTri(1)">#</th>
@@ -94,8 +106,10 @@ include('includes/define-lang.php');
                         <th onclick="activateTri(4)"><?php echo $nombreDinscrits; ?></th>
                     </tr>
                 </thead>
+
                 <tbody id="tableRows"></tbody>    
-            </table>
+            </table>-->
+
         </section>
         <section id="inscription">
             <h2><?php echo $inscriptiontitre; ?></h2>

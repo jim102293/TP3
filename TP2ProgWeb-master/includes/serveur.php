@@ -5,7 +5,7 @@ $goback=$_SERVER['HTTP_REFERER'];
 
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-$conn = mysqli_connect("localhost", "root", "", "site");
+$conn = mysqli_connect("localhost", "root", "root", "site");
 $disconn = 'mysqli_close';
 // Check connection
 if($conn === false){
@@ -33,7 +33,7 @@ else if ($_POST['activité'] == 'Randonnée'){
 else if ($_POST['activité'] == 'Kayak'){
     $activityid = 4;
 }
-else if ($_POST['activité'] == 'Velo'){
+else if ($_POST['activité'] == 'Vélo'){
     $activityid = 5;
 }
 else if ($_POST['activité'] == 'Échecs'){
