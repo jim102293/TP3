@@ -1,5 +1,6 @@
 //FONCTIONS JQUERY
 $(document).ready(function () {
+  LoadTable(1, "");
   //LES FONCTIONS SUIVANTES CONCERNENT L'APPARITION DU MENU
   $("#haut").click(function () { //acceuil
     $("#accueil").slideDown("fast");
@@ -135,23 +136,11 @@ var data = [{ "order": 1, "activity": "Natation", "manager": "Michel Provencher"
 { "order": 4, "activity": "Kayak", "manager": "Josée Coté", "numofsub": 14 },
 { "order": 5, "activity": "Velo", "manager": "Jean-Yves Surroy", "numofsub": 22 },
 { "order": 6, "activity": "Echecs", "manager": "Emilie Simard", "numofsub": 11 }];
-//Affiche le tableau
-function showTable() {  
-  html = "<tbody>";
-  for (var i = 0; i < data.length; i++) {
-    html += "<tr>";
-    html += "<td>" + data[i].order + "</td>";
-    html += "<td>" + data[i].activity + "</td>";
-    html += "<td>" + data[i].manager + "</td>";
-    html += "<td>" + data[i].numofsub + "</td>";
-    html += "</tr>";
-  }
-  document.getElementById("tableRows").innerHTML = html;
-}
+
 //Efface le tableau
 function hideTable() { 
-  var removeRow = document.getElementById("tableRows");
-  for (var i = removeRow.rows.length - 1; i >= 0; i--) {
+  var removeRow = document.getElementById("tablesRows");
+  for (var i = removeRow.rows.length -1; i >= 0; i--) {
     removeRow.deleteRow(i);
   }
 }
@@ -222,4 +211,17 @@ function initMap() {
   var marker = new google.maps.Marker({ position: uqtr, map: map });
 }
 //-------------------------------------------------------------------------------
+//Fonction permettant d'afficher la table provenant de la base de donnée
+function LoadTable(col_sort, texte)
+{
+  $("#matable").append("<tbody id='tablesRows'>");
+  $("#tablesRows>tr").remove();
+  $.getJSON("includes/fetch.php",{col_sort:col_sort, texte:texte},function(data){
+    
+    $(data).each(function(rowNum, item){
+      $("#tablesRows").append("<tr><td>"+item.id+"</td><td>"+item.activityname+"</td><td>"+item.fullname+"</td><td>"+item.nbinscrit+"</td></tr>");
+    });
+  });
+  $("#matable").append("</tbody>");
+}
 

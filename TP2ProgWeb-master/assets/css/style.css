@@ -227,6 +227,11 @@ textarea{
     vertical-align: top;
     margin-bottom: 10px;
 }
+/* Barre de recherche */
+#search {
+    display: block;
+     float: right;
+}
 /* Mettre Display par default sur false*/
 #inscription {
     display:none;

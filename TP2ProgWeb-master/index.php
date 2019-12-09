@@ -13,9 +13,8 @@ $database = 'site';
  
 //Connect using PDO.
 $pdo = new PDO("mysql:host=$server;dbname=$database", $user, $password);
-$pdo->exec( 'SET NAMES utf8' );
 //Acceptation des caractères spéciaux
-
+$pdo->exec( 'SET NAMES utf8' );
 
 include('includes/define-lang.php');
 ?>
@@ -36,7 +35,7 @@ include('includes/define-lang.php');
     <title><?php echo $title; ?></title>
     
 </head>
-<body onload="showTable()">
+<body >
 <header> <!--Entête-->
         <section class="container-1"> 
                 <div class="box-1">
@@ -66,10 +65,17 @@ include('includes/define-lang.php');
             </li>
         </ul>
     </nav>
+    <!--Section du contenu principal -->
 <section class="box-4">
+<!--Changement de la langue-->
     <a id="francais" href="includes/switch-lang.php?lang=1">Français</a>
     <a id="english" href="includes/switch-lang.php?lang=2">English</a>
+    <!--Acceuil-->
     <section id="accueil">
+        <div id="search">
+        <!--Barre de recherche-->
+             <input id="texteRecherche" placeholder="🔍" onkeyup="LoadTable(1,$('#texteRecherche').val())"></input>
+        </div>
             <h2><?php echo $accueiltitre; ?></h2>
             <p> Notre site propose aux étudiants désireux de réaliser une ou plusieurs activités de loisir de rejoindre les différentes activités proposées dans la liste suivante en 3 étapes: </p>
                 <ul>
@@ -81,22 +87,22 @@ include('includes/define-lang.php');
             <div class="box-5">
                 <h2><?php echo $accueiltitretable; ?></h2>
                 <div>
-                <input type="button" name="show" value=<?php echo $buttonremplir; ?> onclick="replaceDataInOrder(); showTable()">
+                <input type="button" name="show" value=<?php echo $buttonremplir; ?> onclick="LoadTable(1,$('#texteRecherche').val())">
                 <input type="button" name="hide" value=<?php echo $buttoneffacer; ?> onclick="hideTable()">
                 </div>
             </div>
-            <table> <!--Le tableau-->
-                <thead>
+            <table id="matable">
+            <thead>
                     <tr>
-                        <th onclick="activateTri(1)">#</th>
-                        <th onclick="activateTri(2)"><?php echo $activite; ?></th>
-                        <th onclick="activateTri(3)"><?php echo $responsable; ?></th>
-                        <th onclick="activateTri(4)"><?php echo $nombreDinscrits; ?></th>
+                        <th onclick="LoadTable(1,$('#texteRecherche').val())">#</th>
+                        <th onclick="LoadTable(2,$('#texteRecherche').val())"><?php echo $activite; ?></th>
+                        <th onclick="LoadTable(3,$('#texteRecherche').val())"><?php echo $responsable; ?></th>
+                        <th onclick="LoadTable(4,$('#texteRecherche').val())"><?php echo $nombreDinscrits; ?></th>
                     </tr>
-                </thead>
-                <tbody id="tableRows"></tbody>    
+                </thead>                  
             </table>
         </section>
+        <!--Inscription-->
         <section id="inscription">
             <h2><?php echo $inscriptiontitre; ?></h2>
             <form method="post" action="includes/serveur.php">
@@ -135,6 +141,7 @@ include('includes/define-lang.php');
                 <span id="validation"></span>
             </form>
         </section>
+        <!--Carte-->
         <section id="sectioncarte">
                 <h3><?php echo $titresectioncarte; ?></h3>
                 <!--La div pour la map -->
