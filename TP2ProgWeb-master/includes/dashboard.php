@@ -7,7 +7,7 @@ if (is_null($text)){$text = "";}
 
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-$conn = mysqli_connect("localhost", "root", "", "site");
+$conn = mysqli_connect("localhost", "root", "root", "site");
 $disconn = 'mysqli_close';
 // Check connection
 if($conn === false){

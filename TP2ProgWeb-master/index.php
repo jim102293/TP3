@@ -3,7 +3,7 @@
 $user = 'root';
  
 //Your MySQL password.
-$password = '';
+$password = 'root';
  
 //The server / hostname of your MySQL installation.
 $server = 'localhost';

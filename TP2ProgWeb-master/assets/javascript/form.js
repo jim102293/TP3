@@ -6,15 +6,14 @@ $(document).ready(function () {
   //LES FONCTIONS SUIVANTES CONCERNENT L'APPARITION DU MENU
   $("#haut").click(function () { //acceuil
     $("#accueil").slideDown("fast");
-    $("#inscription").hide();
+    $("#inscription").slideUp("fast");
     $("#sectioncarte").slideUp("fast");
     $(".sousMenu").removeClass("sousMenuLong");
     $("a.subActive").removeClass("subActive");
       $("#haut").removeClass("activeDefault");
       $("#haut").addClass("activeMenu-1");
       $("#milieu").removeClass("activeMenu-2");
-      $("#bas").removeClass("activeMenu-3"); 
-      $(".box-4").show(); 
+      $("#bas").removeClass("activeMenu-3");   
   });
   $("#francais").click(function () { //acceuil
     $("#accueil").slideDown("fast");
@@ -36,9 +35,7 @@ $(document).ready(function () {
     $("#milieu").addClass("activeMenu-2");
     $("#haut").removeClass("activeMenu-1");
     $("#bas").removeClass("activeMenu-3");
-    $('.box-4').hide();
-    $("#inscription").addClass("box-4");
-
+    
   });
   $("#bas").click(function () { //Localiser
     $("#accueil").slideUp("fast");
@@ -49,8 +46,6 @@ $(document).ready(function () {
     $("#haut").removeClass("activeDefault");
     $("#haut").removeClass("activeMenu-1");
     $("#milieu").removeClass("activeMenu-2");
-    $('.box-4').hide();
-    $("#sectioncarte").addClass("box-4");
   });
   $("#bas").dblclick(function () { //Enlève le sous-menu au double click
     $(".sousMenu").removeClass("sousMenuLong");
