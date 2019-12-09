@@ -5,12 +5,12 @@ $goback=$_SERVER['HTTP_REFERER'];
 
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-$conn = mysqli_connect("localhost", "root", "root", "site");
+$conn = mysqli_connect("localhost", "root", "", "site");
 $disconn = 'mysqli_close';
 // Check connection
 if($conn === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
-} 
+}; 
 // Préparer les données pour la base de données
 if( $_POST['sexe'] == 'Homme'){
     $sex = 0;
