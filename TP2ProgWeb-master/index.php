@@ -73,7 +73,7 @@ include('includes/define-lang.php');
     <!--Acceuil-->
     <section id="accueil">
     <!--Bouton changement de langue-->
-    <input type= "image" id="switch" src=<?php echo $switch;?> value="<?php echo $change;?>"></input>
+    <input type= "image" id="switch" src=<?php echo $switch;?> value="<?php echo $change;?>" alt="drapeau"></input>
         <div id="search">
         <!--Barre de recherche-->
              <input id="texteRecherche" placeholder="🔍" onkeyup="LoadTable(1,$('#texteRecherche').val())"></input>
