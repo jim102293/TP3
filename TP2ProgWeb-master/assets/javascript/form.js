@@ -216,8 +216,8 @@ function LoadTable(col_sort, texte)
 {
   $("#matable").append("<tbody id='tablesRows'>");
   $("#tablesRows>tr").remove();
-  $.getJSON("includes/fetch.php",{col_sort:col_sort, texte:texte},function(data){
-    
+  $.getJSON("fetch.php",{col_sort:col_sort, texte:texte},function(data){
+    console.log(data);
     $(data).each(function(rowNum, item){
       $("#tablesRows").append("<tr><td>"+item.id+"</td><td>"+item.activityname+"</td><td>"+item.fullname+"</td><td>"+item.nbinscrit+"</td></tr>");
     });

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Erstellungszeit: 05. Dez 2019 um 22:57
--- Server-Version: 5.7.26
--- PHP-Version: 7.2.18
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  mar. 10 déc. 2019 à 01:14
+-- Version du serveur :  10.4.10-MariaDB
+-- Version de PHP :  7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Datenbank: `site`
+-- Base de données :  `site`
 --
 
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `activity`
+-- Structure de la table `activity`
 --
 
 DROP TABLE IF EXISTS `activity`;
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `activity` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Daten für Tabelle `activity`
+-- Déchargement des données de la table `activity`
 --
 
 INSERT INTO `activity` (`id`, `activityname`, `description`) VALUES
@@ -51,7 +51,7 @@ INSERT INTO `activity` (`id`, `activityname`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `dictionary`
+-- Structure de la table `dictionary`
 --
 
 DROP TABLE IF EXISTS `dictionary`;
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `dictionary` (
 ) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 
 --
--- Daten für Tabelle `dictionary`
+-- Déchargement des données de la table `dictionary`
 --
 
 INSERT INTO `dictionary` (`id`, `keyvalue`, `en`, `fr`) VALUES
@@ -101,7 +101,7 @@ INSERT INTO `dictionary` (`id`, `keyvalue`, `en`, `fr`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `member`
+-- Structure de la table `member`
 --
 
 DROP TABLE IF EXISTS `member`;
@@ -113,10 +113,10 @@ CREATE TABLE IF NOT EXISTS `member` (
   `activityid` int(11) NOT NULL,
   `motivation` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 
 --
--- Daten für Tabelle `member`
+-- Déchargement des données de la table `member`
 --
 
 INSERT INTO `member` (`id`, `fullname`, `dob`, `sex`, `activityid`, `motivation`) VALUES
@@ -137,21 +137,38 @@ INSERT INTO `member` (`id`, `fullname`, `dob`, `sex`, `activityid`, `motivation`
 (25, 'Wagner Sebastian', '2019-12-05', 0, 4, 'test'),
 (24, 'Wagner Sebastian', '2019-12-05', 0, 3, ''),
 (23, 'Wagner Sebastian', '2019-12-05', 0, 3, ''),
-(22, 'Wagner Sebastian', '2019-12-05', 0, 1, '');
+(22, 'Wagner Sebastian', '2019-12-05', 0, 1, ''),
+(27, 'rew ewrewrew', '2019-12-03', 1, 3, ''),
+(28, 'gregfre efwfew', '2019-12-02', 1, 3, ''),
+(29, 'erwrew ewrewre', '2019-12-02', 1, 1, ''),
+(30, 'Fred dewde', '2019-12-02', 1, 2, ''),
+(31, 'Bon Jovi', '2019-12-10', 0, 1, '');
 
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `supervisor`
+-- Structure de la table `supervisor`
 --
 
 DROP TABLE IF EXISTS `supervisor`;
 CREATE TABLE IF NOT EXISTS `supervisor` (
-  `id` int(11) NOT NULL,
-  `full name` varchar(80) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fullname` varchar(80) NOT NULL,
   `activityid` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `supervisor`
+--
+
+INSERT INTO `supervisor` (`id`, `fullname`, `activityid`) VALUES
+(1, 'Michel Provencher', 1),
+(2, 'Daniel Lefevbre', 2),
+(3, 'Catherine Pelletier', 3),
+(4, 'Josée Coté', 4),
+(5, 'Jean-Yves Surroy', 5),
+(6, 'Emilie Simard', 6);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
