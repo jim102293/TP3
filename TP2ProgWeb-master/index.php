@@ -76,7 +76,6 @@ include('includes/define-lang.php');
         <!--Barre de recherche-->
              <input id="texteRecherche" placeholder="🔍" onkeyup="LoadTable(1,$('#texteRecherche').val())"></input>
         </div>
-
             <h2><?php echo $accueiltitre; ?></h2>
             <p> Notre site propose aux étudiants désireux de réaliser une ou plusieurs activités de loisir de rejoindre les différentes activités proposées dans la liste suivante en 3 étapes: </p>
                 <ul>
@@ -94,16 +93,14 @@ include('includes/define-lang.php');
             </div>
             <table id="matable">
             <thead>
-        <table id="matable">
-                <thead>
                     <tr>
-                        <th onclick="LoadTable(1,$('#texterecherche').val())">#</th>
-                        <th onclick="LoadTable(2,$('#texterecherche').val())"><?php echo $activite; ?></th>
-                        <th onclick="LoadTable(3,$('#texterecherche').val())"><?php echo $responsable; ?></th>
-                        <th onclick="LoadTable(4,$('#texterecherche').val())"><?php echo $nombreDinscrits; ?></th>
+                        <th onclick="LoadTable(1,$('#texteRecherche').val())">#</th>
+                        <th onclick="LoadTable(2,$('#texteRecherche').val())"><?php echo $activite; ?></th>
+                        <th onclick="LoadTable(3,$('#texteRecherche').val())"><?php echo $responsable; ?></th>
+                        <th onclick="LoadTable(4,$('#texteRecherche').val())"><?php echo $nombreDinscrits; ?></th>
                     </tr>
-                </thead>
-        </table>
+                </thead>                  
+            </table>
         </section>
         <!--Inscription-->
         <section id="inscription">

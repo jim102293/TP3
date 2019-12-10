@@ -10,7 +10,7 @@ $disconn = 'mysqli_close';
 // Check connection
 if($conn === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
-}; 
+} 
 // Préparer les données pour la base de données
 if( $_POST['sexe'] == 'Homme'){
     $sex = 0;
@@ -33,7 +33,7 @@ else if ($_POST['activité'] == 'Randonnée'){
 else if ($_POST['activité'] == 'Kayak'){
     $activityid = 4;
 }
-else if ($_POST['activité'] == 'Vélo'){
+else if ($_POST['activité'] == 'Velo'){
     $activityid = 5;
 }
 else if ($_POST['activité'] == 'Échecs'){
