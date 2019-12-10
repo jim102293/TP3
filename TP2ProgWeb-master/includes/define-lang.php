@@ -20,6 +20,7 @@ $student = 'Je suis un étudiant';
 $activite = 'Activité';
 $responsable = 'Responsable';
 $nombreDinscrits = 'Nombre d\'inscrits';
+$switch = 'Fr';
 // Choisir la langue dependant de la session
 if($_SESSION['lang'] == 1){
     $language = 'fr';
@@ -122,8 +123,12 @@ foreach($pdo->query($sql, PDO::FETCH_ASSOC) as $row){
     else if ($row['keyvalue'] == 'buttoneffacer'){
         $buttoneffacer= $row[$language];
     }
-
-
+    else if ($row['keyvalue'] == 'switch'){
+        $switch= $row[$language];
+    }
+    else if ($row['keyvalue'] == 'change'){
+        $change= $row[$language];
+    }
 // 
 }      
 ?>

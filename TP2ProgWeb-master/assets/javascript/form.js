@@ -121,8 +121,17 @@ $(document).ready(function () {
     else 
       alert("Votre inscription a été envoyé!");
   });
+  $("#switch").click(function() {
+    if ($("#switch").val() === "fr") {
+      window.location = "includes/switch-lang.php?lang=2";
+    }
+    if ($("#switch").val() === "en") {
+      window.location = "includes/switch-lang.php?lang=1";
+    }
+  });
 });
 //---------------------------------------------------------------------------
+
 //FONCTIONS JAVASCRIPT
 function lettersOnly(input) { //Fait en sorte qu'il est impossible pour le client d'écrire des chiffres pour les champs noms et prénoms
   var onlyLetters = /[^a-z àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ]/gi;
@@ -217,7 +226,6 @@ function LoadTable(col_sort, texte)
   $("#matable").append("<tbody id='tablesRows'>");
   $("#tablesRows>tr").remove();
   $.getJSON("includes/fetch.php",{col_sort:col_sort, texte:texte},function(data){
-    console.log(data);
     $(data).each(function(rowNum, item){
       $("#tablesRows").append("<tr><td>"+item.id+"</td><td>"+item.activityname+"</td><td>"+item.fullname+"</td><td>"+item.nbinscrit+"</td></tr>");
     });

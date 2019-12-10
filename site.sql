@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 10 déc. 2019 à 01:38
+-- Généré le :  mar. 10 déc. 2019 à 07:36
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -61,14 +61,14 @@ CREATE TABLE IF NOT EXISTS `dictionary` (
   `en` text NOT NULL,
   `fr` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `dictionary`
 --
 
 INSERT INTO `dictionary` (`id`, `keyvalue`, `en`, `fr`) VALUES
-(1, 'home', 'Home', 'Accueil'),
+(1, 'home', 'Home', 'Acceuil'),
 (2, 'subscribe', 'Subscribe', 'S\'inscrire'),
 (3, 'localise', 'Find an activity', 'Localiser une activité'),
 (4, 'natation', 'Swimming', 'Natation'),
@@ -96,7 +96,9 @@ INSERT INTO `dictionary` (`id`, `keyvalue`, `en`, `fr`) VALUES
 (27, 'titresectioncarte', 'Adress of the university', 'L\'adresse de l\'université '),
 (28, 'title', 'Activities for students!', 'Loisir pour les étudiants!'),
 (29, 'buttonremplir', 'Fill', 'Remplir'),
-(30, 'buttoneffacer', 'Delete', 'Effacer');
+(30, 'buttoneffacer', 'Delete', 'Effacer'),
+(31, 'switch', '\"assets/images/fr.png\"', '\"assets/images/En.png\"'),
+(32, 'change', 'en', 'fr');
 
 -- --------------------------------------------------------
 

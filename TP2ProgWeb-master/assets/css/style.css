@@ -232,6 +232,7 @@ textarea{
     display: block;
      float: right;
 }
+
 /* Mettre Display par default sur false*/
 #inscription {
     display:none;

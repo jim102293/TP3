@@ -19,7 +19,7 @@ $pdo->exec( 'SET NAMES utf8' );
 include('includes/define-lang.php');
 ?>
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,10 +68,12 @@ include('includes/define-lang.php');
     <!--Section du contenu principal -->
 <section class="box-4">
 <!--Changement de la langue-->
-    <a id="francais" href="includes/switch-lang.php?lang=1">Français</a>
-    <a id="english" href="includes/switch-lang.php?lang=2">English</a>
+    <div id="button">
+</div>
     <!--Acceuil-->
     <section id="accueil">
+    <!--Bouton changement de langue-->
+    <input type= "image" id="switch" src=<?php echo $switch;?> value="<?php echo $change;?>"></input>
         <div id="search">
         <!--Barre de recherche-->
              <input id="texteRecherche" placeholder="🔍" onkeyup="LoadTable(1,$('#texteRecherche').val())"></input>
