@@ -20,7 +20,7 @@ $key = isset($_GET['searkey']) ? $_GET['searkey'] : NULL;
 $sql = "SELECT activity.id, 
 activity.activityname, 
 supervisor.fullname, 
-COUNT(member.id) as nbinscrit
+COUNT(member.fullname) as nbinscrit
 FROM supervisor 
 LEFT JOIN activity ON (activity.id = supervisor. activityid)
 LEFT JOIN member ON (member.activityid = activity.id)

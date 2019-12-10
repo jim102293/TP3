@@ -33,7 +33,7 @@ else if ($_POST['activité'] == 'Randonnée'){
 else if ($_POST['activité'] == 'Kayak'){
     $activityid = 4;
 }
-else if ($_POST['activité'] == 'Velo'){
+else if ($_POST['activité'] == 'Vélo'){
     $activityid = 5;
 }
 else if ($_POST['activité'] == 'Échecs'){

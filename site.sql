@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 10 déc. 2019 à 01:14
+-- Généré le :  mar. 10 déc. 2019 à 01:38
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -113,36 +113,7 @@ CREATE TABLE IF NOT EXISTS `member` (
   `activityid` int(11) NOT NULL,
   `motivation` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `member`
---
-
-INSERT INTO `member` (`id`, `fullname`, `dob`, `sex`, `activityid`, `motivation`) VALUES
-(1, 'Jimmy', '1211-02-12', 0, 0, 'Im a happy student'),
-(2, 'Jimmy', '1211-02-12', 0, 0, 'Im a happy student'),
-(3, 'Jimmy', '1211-02-12', 0, 0, 'Im a happy student'),
-(4, 'Tommy', '0111-11-12', 0, 0, ''),
-(5, 'Tommy', '0111-11-12', 0, 0, ''),
-(6, 'Wagner', '2019-12-05', 0, 0, 'test'),
-(7, 'Wagner', '2019-12-05', 0, 0, 'test'),
-(8, 'Wagner', '2019-12-05', 0, 0, 'test'),
-(9, 'Wagner', '2019-12-05', 0, 0, 'test'),
-(10, 'Wagner', '2004-12-02', 0, 0, 'Hallo'),
-(11, 'Wagner', '2004-12-02', 0, 0, 'Hallo'),
-(12, 'Wagner', '2019-08-05', 0, 0, ''),
-(13, 'Wagner', '2019-08-05', 0, 0, ''),
-(26, 'Teste Tesre', '2019-12-06', 0, 4, ''),
-(25, 'Wagner Sebastian', '2019-12-05', 0, 4, 'test'),
-(24, 'Wagner Sebastian', '2019-12-05', 0, 3, ''),
-(23, 'Wagner Sebastian', '2019-12-05', 0, 3, ''),
-(22, 'Wagner Sebastian', '2019-12-05', 0, 1, ''),
-(27, 'rew ewrewrew', '2019-12-03', 1, 3, ''),
-(28, 'gregfre efwfew', '2019-12-02', 1, 3, ''),
-(29, 'erwrew ewrewre', '2019-12-02', 1, 1, ''),
-(30, 'Fred dewde', '2019-12-02', 1, 2, ''),
-(31, 'Bon Jovi', '2019-12-10', 0, 1, '');
+) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
