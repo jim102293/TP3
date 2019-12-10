@@ -121,6 +121,7 @@ $(document).ready(function () {
     else 
       alert("Votre inscription a été envoyé!");
   });
+  //Drapeau!
   $("#switch").click(function() {
     if ($("#switch").val() === "fr") {
       window.location = "includes/switch-lang.php?lang=2";
