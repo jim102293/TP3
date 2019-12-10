@@ -1,17 +1,19 @@
 //FONCTIONS JQUERY
 $(document).ready(function () {
   LoadTable(1, "");
+
   //LES FONCTIONS SUIVANTES CONCERNENT L'APPARITION DU MENU
   $("#haut").click(function () { //acceuil
     $("#accueil").slideDown("fast");
-    $("#inscription").slideUp("fast");
+    $("#inscription").hide();
     $("#sectioncarte").slideUp("fast");
     $(".sousMenu").removeClass("sousMenuLong");
     $("a.subActive").removeClass("subActive");
       $("#haut").removeClass("activeDefault");
       $("#haut").addClass("activeMenu-1");
       $("#milieu").removeClass("activeMenu-2");
-      $("#bas").removeClass("activeMenu-3");   
+      $("#bas").removeClass("activeMenu-3"); 
+      $(".box-4").show(); 
   });
   $("#francais").click(function () { //acceuil
     $("#accueil").slideDown("fast");
@@ -33,7 +35,9 @@ $(document).ready(function () {
     $("#milieu").addClass("activeMenu-2");
     $("#haut").removeClass("activeMenu-1");
     $("#bas").removeClass("activeMenu-3");
-    
+    $('.box-4').hide();
+    $("#inscription").addClass("box-4");
+
   });
   $("#bas").click(function () { //Localiser
     $("#accueil").slideUp("fast");
@@ -44,6 +48,8 @@ $(document).ready(function () {
     $("#haut").removeClass("activeDefault");
     $("#haut").removeClass("activeMenu-1");
     $("#milieu").removeClass("activeMenu-2");
+    $('.box-4').hide();
+    $("#sectioncarte").addClass("box-4");
   });
   $("#bas").dblclick(function () { //Enlève le sous-menu au double click
     $(".sousMenu").removeClass("sousMenuLong");
@@ -121,6 +127,7 @@ $(document).ready(function () {
     else 
       alert("Votre inscription a été envoyé!");
   });
+
 });
 //---------------------------------------------------------------------------
 //FONCTIONS JAVASCRIPT
@@ -130,6 +137,7 @@ function lettersOnly(input) { //Fait en sorte qu'il est impossible pour le clien
 }
 //CES FONCTIONS PERMETTENT L'APPARITION ET LA DISPARITION DU TABLEAU AINSI QUE DE TRIER CELUI-CI
 //Les données du tableau
+//REQUETES SQL POUR NOMBRE DE MEMBRE PAR ACTIVITE EX: SELECT COUNT(*) FROM member WHERE activityid = 4
 var data = [{ "order": 1, "activity": "Natation", "manager": "Michel Provencher", "numofsub": 7 },
 { "order": 2, "activity": "Badminton", "manager": "Daniel Lefevbre", "numofsub": 15 },
 { "order": 3, "activity": "Randonnée", "manager": "Catherine Pelletier", "numofsub": 10 },
@@ -225,3 +233,14 @@ function LoadTable(col_sort, texte)
   $("#matable").append("</tbody>");
 }
 
+function LoadTable(col_sort, texte)
+{
+  $("#matable>tr").remove();
+  $.getJSON("/TP3/TP2ProgWeb-master/includes/dashboard.php",{col_sort:col_sort, texte:texte},function(data){
+    $(data).each(function(rowNum, item){
+      $("#matable").append("<tr><td>"+item.id+"</td><td>"+item.activityname+"</td><td>"+item.fullname+"</td><td>"+item.nbinscrit+"</td></tr>");
+
+    });
+
+  });
+}
